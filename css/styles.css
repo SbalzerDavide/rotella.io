@@ -21,3 +21,15 @@ h1{
 h3{
     margin: 10px;
 }
+
+.box{
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+button{
+    padding: 3px;
+    border-radius: 3px;
+}
