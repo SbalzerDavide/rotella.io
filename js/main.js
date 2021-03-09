@@ -39,7 +39,6 @@ const app = new Vue({
             this.term = dayjs(this.time).add(280, 'day').format('DD/MM/YYYY');
 
 
-
             // console.log(this.start.diff(this.now));
             // const date1 = dayjs('2019-01-25');
             // const date2 = dayjs('2018-06-05');
