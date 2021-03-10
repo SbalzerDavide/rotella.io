@@ -6,14 +6,31 @@
 
 body{
     font-family: sans-serif;
+    background-color: #ffc43d;
+}
+
+.select-input{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.select-input p{
+    width: 80%;
+    margin: 10px 0;
 }
 
 .container{
-    width: 300px;
+    width: 500px;
     margin: 0 auto;
 }
 
+.select-input .diff{
+    flex-basis: 50%;
+}
+
 h1{
+    color: #ef476f;
     margin: 20px;
     text-align: center;
 }
@@ -27,9 +44,43 @@ h3{
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
+    background-color: #1b9aaa;
 }
 
 button{
-    padding: 3px;
+    padding: 5px 10px;
     border-radius: 3px;
+    background-color: #ef476f;
+    border: 1px solid #ffc43d;
+}
+
+input{
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ffc43d;
+
+}
+
+p{
+    line-height: 2rem;
+}
+
+span{
+    padding: 5px 10px;
+    /* width: 50px; */
+    margin: 0 5px;
+    background-color: #ffc43d;
+    border-radius: 5px;
+    border: 1px solid #ef476f;
+
+}
+
+@media screen and (max-width: 600px){
+    .container{
+        width: 300px;
+    }
+    .select-input .diff{
+        flex-basis: 100%;
+    }
+    
 }

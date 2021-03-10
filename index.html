@@ -15,37 +15,59 @@
 <body>
     <div id="app">
         <div class="container">
-            <h1>rotella ostetrica</h1>
+            <h1>Rotella ostetrica</h1>
 
             <div class="box">
-                <input v-model="start" type="date">
-                <button @click="go">calculate</button>
+                <div class="select-input">
+                    <div class="diff">
+                        <h3>Ultima mesutruazione</h3>
+                        <input v-model="start" type="date">
+                        <button @click="takeFromStart">inserisci</button>
+                    </div>
+                    <div class="diff">
+                        <h3>Epoca presunta del parto</h3>
+                        <input v-model="inputParto" type="date"> 
+                        <button @click="takefromEnd">inserisci</button>
+        
+                    </div>
+
+                </div>
     
                 <!-- where are you now -->
-                <h3>now we are at {{ weekDiff }} weeks and {{ diffMore }} days</h3>
+                <p>Ora sei a <span>{{ weekDiff }} </span> settimane e <span>{{ diffMore }}</span>  giorni</p>
     
-                <h3>terms: {{ term }}</h3>
+                <p>termine: {{ term }}</p>
 
             </div>
 
             <div class="box">
+                <h3>Inserisci la data</h3>
                 <input v-model="second" type="date">
-                <button @click="go2">calculate</button>
-                <h3>{{ weekDiff2 }} weeks and {{ diffMore2 }} days</h3>
+                <button @click="go2">calcola</button>
+                <p><span>{{ weekDiff2 }}</span> weeks and <span>{{ diffMore2 }}</span>  days</p>
 
             </div>
 
 
             <div class="box">
-                <p>insert week</p>
+                <p>Inserisci settimane</p>
                 <input v-model="inputWeek" type="number">
-                <p>insert day</p>
+                <p>Inserisci giorni</p>
                 <input v-model="inputDay" type="number">
-                <button @click="go3">take</button>
-                <h3>{{ add }}</h3>
+                <button @click="go3">calcola</button>
                 <h3>{{ addedDay }}</h3>
 
             </div>
+
+
+            <!-- <div class="box">
+                <p>inserisci epoca presunta del parto</p>
+                <input v-model="inputParto" type="date"> 
+                <button @click="takefromEnd">take</button>
+                <h3>now we are at {{ weekDiff }} weeks and {{ diffMore }} days</h3>
+    
+                <h3>terms: {{ term }}</h3>
+            </div> -->
 
 
         </div>

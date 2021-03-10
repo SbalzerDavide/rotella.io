@@ -22,12 +22,14 @@ const app = new Vue({
         inputDay: 0,
         add: '',
         addedDay: '',
+        startFromEnd: '',
+        inputParto: '',
     },
     created(){
         this.now = dayjs();
     },
     methods:{
-        go(){
+        takeFromStart(){
             // this.time = dayjs(this.start).format('DD/MM/YYYY');
             this.time = dayjs(this.start);
             // this.time = dayjs(this.start).toNow();
@@ -59,8 +61,17 @@ const app = new Vue({
         go3(){
             this.add = parseInt(this.inputDay) + (parseInt(this.inputWeek) * 7 );
             this.addedDay = dayjs(this.time).add(this.add, 'day').format('DD/MM/YYYY');
+        },
+        takefromEnd(){
+            this.time = dayjs(this.inputParto).subtract(280, 'day');
+            this.dayDiff = this.now.diff(this.time, 'day');
+            console.log(this.dayDiff, 'day');
+            this.weekDiff = this.now.diff(this.time, 'week');
+            console.log(this.weekDiff, 'week');
+            this.diffMore = this.dayDiff % 7;
+            this.term = dayjs(this.time).add(280, 'day').format('DD/MM/YYYY');
 
-            
+
         }
     }
 })
