@@ -1,203 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./css/styles2.css"> -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
-    <!-- relative time -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/relativeTime.min.js"></script>
-    <script id="scriptVersion2" src="./js/main2.js" defer></script>
-    <script id="scriptVersion1" src="./js/main1.js" defer></script>
-    <title>Rotella ostetrica</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="./css/styles2.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
+  <!-- relative time -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/relativeTime.min.js"></script>
+  <script id="scriptVersion2" src="./js/main2.js" defer></script>
+  <script id="scriptVersion1" src="./js/main1.js" defer></script>
+  <title>Rotella ostetrica</title>
 </head>
 <body>
 
-    <div class="new-version">
-        <button id="changeVersion">Prova nuova versione</button>
+  <div class="new-version">
+    <button id="changeVersion">Prova nuova versione</button>
+  </div>
+
+  <div id="cont-app1">
+    <div id="app1">
+      <!-- <script id="scriptVersion2" src="./js/main2.js" defer></script> -->
+      <link rel="stylesheet" href="./css/styles1.css">
+      <div class="container">
+        <h1>Rotella ostetrica</h1>
+
+        <div class="box">
+          <div class="select-input">
+              <div class="diff">
+                  <input v-model="start" type="date">
+                <button @click="takeFromStart">inserisci</button>
+              </div>
+              <div class="diff">
+                <h3>Epoca presunta del parto</h3>
+                <input v-model="inputParto" type="date"> 
+                <button @click="takefromEnd">inserisci</button>  
+              </div>
+
+          </div>
+
+          <!-- where are you now -->
+          <p>Ora sei a <span>{{ weekDiff }} </span> settimane e <span>{{ diffMore }}</span>  giorni</p>
+          <p>termine: {{ term }}</p>
+        </div>
+
+        <div class="box">
+          <h3>Inserisci la data</h3>
+          <input v-model="second" type="date">
+          <button @click="go2">calcola</button>
+          <p><span>{{ weekDiff2 }}</span> weeks and <span>{{ diffMore2 }}</span>  days</p>
+        </div>
+
+        <div class="box">
+          <p>Inserisci settimane</p>
+          <input v-model="inputWeek" type="number">
+          <p>Inserisci giorni</p>
+          <input v-model="inputDay" type="number">
+          <button @click="go3">calcola</button>
+          <h3>{{ addedDay }}</h3>
+        </div>
+
+        <!-- <div class="box">
+            <p>inserisci epoca presunta del parto</p>
+            <input v-model="inputParto" type="date"> 
+            <button @click="takefromEnd">take</button>
+            <h3>now we are at {{ weekDiff }} weeks and {{ diffMore }} days</h3>
+
+            <h3>terms: {{ term }}</h3>
+        </div> -->
+      </div>
     </div>
-
-    <div id="cont-app1">
-        <div id="app1">
-            <!-- <script id="scriptVersion2" src="./js/main2.js" defer></script> -->
-            <link rel="stylesheet" href="./css/styles1.css">
-            <div class="container">
-                <h1>Rotella ostetrica</h1>
-
-                <div class="box">
-                    <div class="select-input">
-                        <div class="diff">
-                            <h3>Ultima mesutruazione</h3>
-                            <input v-model="start" type="date">
-                            <button @click="takeFromStart">inserisci</button>
-                        </div>
-                        <div class="diff">
-                            <h3>Epoca presunta del parto</h3>
-                            <input v-model="inputParto" type="date"> 
-                            <button @click="takefromEnd">inserisci</button>
-            
-                        </div>
-
-                    </div>
-        
-                    <!-- where are you now -->
-                    <p>Ora sei a <span>{{ weekDiff }} </span> settimane e <span>{{ diffMore }}</span>  giorni</p>
-        
-                    <p>termine: {{ term }}</p>
-
-                </div>
-
-                <div class="box">
-                    <h3>Inserisci la data</h3>
-                    <input v-model="second" type="date">
-                    <button @click="go2">calcola</button>
-                    <p><span>{{ weekDiff2 }}</span> weeks and <span>{{ diffMore2 }}</span>  days</p>
-
-                </div>
+  </div>
 
 
-                <div class="box">
-                    <p>Inserisci settimane</p>
-                    <input v-model="inputWeek" type="number">
-                    <p>Inserisci giorni</p>
-                    <input v-model="inputDay" type="number">
-                    <button @click="go3">calcola</button>
-                    <h3>{{ addedDay }}</h3>
+  <div id="cont-app2">
+    <div id="app2">
+      <link rel="stylesheet" href="./css/styles2.css">
+      <!-- <script id="scriptVersion2" src="./js/main2.js" defer></script> -->
+      <div class="container">
+        <h1>Rotella ostetrica</h1>
 
-                </div>
-
-
-                <!-- <div class="box">
-                    <p>inserisci epoca presunta del parto</p>
-                    <input v-model="inputParto" type="date"> 
-                    <button @click="takefromEnd">take</button>
-                    <h3>now we are at {{ weekDiff }} weeks and {{ diffMore }} days</h3>
-        
-                    <h3>terms: {{ term }}</h3>
-                </div> -->
-
-
+        <div class="box">
+          <div class="select-input">
+            <div @click="refresh" class="input-date">
+              <!-- <h3>Inserisci: </h3> -->
+              <div 
+                @click="active = 'UM'"
+                :class="active=='UM' ? 'active' : ''"
+              >
+                ultima mesutruazione
+              </div>
+              <div 
+                @click="active = 'D'"
+                :class="active=='D' ? 'active' : ''"
+              >
+                data presunta parto
+              </div>
+              <div class="line" :class="active"></div>
             </div>
+            <div v-if="active=='UM'" class="diff">
+              <input 
+                @change="takeFromStart" 
+                v-model="start" 
+                type="date"
+              >
+              <!-- <button @click="takeFromStart">inserisci</button> -->
+            </div>
+            <div v-else-if="active=='D'" class="diff">
+              <input 
+                @change="takefromEnd" 
+                v-model="inputParto" 
+                type="date"
+              > 
+              <!-- <button @click="takefromEnd">inserisci</button> -->
+            </div>
+          </div>
+
+          <!-- where are you now -->
+          <div class="ga">
+            <p>Gravidanza a 
+              <span class="show-val show-val-num">{{ weekDiff }} </span> 
+              settimane e 
+              <span class="show-val show-val-num">{{ dayDiff%7 }}</span>  
+              giorni</p>
+          </div>
+
+          <div class="delivery">
+            <p>Delivery: <span class="show-val show-val-date">{{ term }}</span></p>
+          </div>
 
         </div>
-    </div>
 
-
-    <div id="cont-app2">
-        <div id="app2">
-            <link rel="stylesheet" href="./css/styles2.css">
-            <!-- <script id="scriptVersion2" src="./js/main2.js" defer></script> -->
-            <div class="container">
-                <h1>Rotella ostetrica</h1>
-
-                <div class="box">
-                    <div class="select-input">
-                        <div class="input-date">
-                            <!-- <h3>Inserisci: </h3> -->
-                            <div 
-                                @click="active = 'UM'"
-                                :class="active=='UM' ? 'active' : ''"
-                            >
-                                ultima mesutruazione
-                            </div>
-                            <div 
-                                @click="active = 'D'"
-                                :class="active=='D' ? 'active' : ''"
-                            >
-                                data presunta parto
-                            </div>
-                            <div class="line" :class="active"></div>
-                        </div>
-                        <div class="diff">
-                            <h3>Ultima mesutruazione</h3>
-                            <input v-model="start" type="date">
-                            <button @click="takeFromStart">inserisci</button>
-                        </div>
-                        <div class="diff">
-                            <h3>Epoca presunta del parto</h3>
-                            <input v-model="inputParto" type="date"> 
-                            <button @click="takefromEnd">inserisci</button>
-            
-                        </div>
-
-                    </div>
-        
-                    <!-- where are you now -->
-                    <p>Ora sei a <span>{{ weekDiff }} </span> settimane e <span>{{ diffMore }}</span>  giorni</p>
-        
-                    <p>termine: {{ term }}</p>
-
-                </div>
-
-                <div class="box">
-                    <h3>Calcola epoca gestazionale nella data inserita</h3>
-                    <input v-model="second" type="date">
-                    <button @click="go2">calcola</button>
-                    <p><span>{{ weekDiff2 }}</span> weeks and <span>{{ diffMore2 }}</span>  days</p>
-
-                </div>
-
-
-                <div class="box">
-                    <h3>Calcolo giorno in cui sarò ad una certa epoca gestazionale</h3>
-                    <p>Inserisic settimane</p>
-                    <input v-model="inputWeek" type="number">
-                    <p>Inserisci giorni</p>
-                    <input v-model="inputDay" type="number">
-                    <button @click="go3">calcola</button>
-                    <h3>{{ addedDay }}</h3>
-
-                </div>
-
-
-            </div>
-
+        <div class="box">
+          <h4>Calcola epoca gestazionale nella data inserita</h4>
+          <div class="from-date">
+            <input @change="go2" v-model="second" type="date">
+          </div>
+          <!-- <button @click="go2">calcola</button> -->
+          <p><span class="show-val show-val-num">{{ weekDiff2 }}</span> settimane e <span class="show-val show-val-num">{{ diffMore2 }}</span>  giorni</p>
         </div>
+
+        <div class="box">
+          <h4>Calcolo giorno in cui sarò ad una certa epoca gestazionale</h4>
+          <p>Inserisci settimane</p>
+          <input v-model="inputWeek" type="number">
+          <p>Inserisci giorni</p>
+          <input v-model="inputDay" type="number">
+          <button @click="go3">calcola</button>
+          <h3>{{ addedDay }}</h3>
+        </div>
+      </div>
+
     </div>
+  </div>
 
-    <style>
-        #app1, #app2{
-            /* margin-top: 40px; */
-        }
-        .new-version{
-            display: none;
-            /* position: absolute;
-            top: 5px;
-            left: 5px;
-            display: flex;
-            justify-content: center;     */
-        }
-
-    </style>
-    <script>
-        
-        window.rotellaVersion = 1;
-        let app1 = document.getElementById("cont-app1");
-        let app2 = document.getElementById("cont-app2");
-        let changeVersion = function(){
-            if(window.rotellaVersion === 1){
-                app2.style.display = "none";
-                app1.style.display = "block";
-            } else if(window.rotellaVersion === 2){
-                app1.style.display = "none";
-                app2.style.display = "block";
-            }
-        }
+  <style>
+    #app1, #app2{
+      margin-top: 40px;
+    }
+    .new-version{
+      display: none;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      display: flex;
+      justify-content: center;    
+    }
+  </style>
+  <script>
+    window.rotellaVersion = 2;
+    let app1 = document.getElementById("cont-app1");
+    let app2 = document.getElementById("cont-app2");
+    let changeVersion = function(){
+      if(window.rotellaVersion === 1){
+        app2.style.display = "none";
+        app1.style.display = "block";
+      } else if(window.rotellaVersion === 2){
+        app1.style.display = "none";
+        app2.style.display = "block";
+      }
+    }
+    changeVersion();
+    
+    let changeVersionButton = document.getElementById("changeVersion");
+    changeVersionButton.addEventListener("click", ()=>{
+      console.log("click");
+      if(window.rotellaVersion === 1){
+        window.rotellaVersion = 2;
         changeVersion();
-        
-        let changeVersionButton = document.getElementById("changeVersion");
-        changeVersionButton.addEventListener("click", ()=>{
-            console.log("click");
-            if(window.rotellaVersion === 1){
-                window.rotellaVersion = 2;
-                changeVersion();
-            } else if(window.rotellaVersion === 2){
-                window.rotellaVersion = 1;
-                changeVersion();
-            }
-        })
-    </script>
+      } else if(window.rotellaVersion === 2){
+        window.rotellaVersion = 1;
+        changeVersion();
+      }
+    })
+  </script>
 </body>
 </html>

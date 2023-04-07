@@ -9,37 +9,39 @@ body{
     background-color: #ffc43d;
 }
 
-.select-input{
+#app2 .select-input{
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
-.select-input p{
+#app2 .select-input p{
     width: 80%;
     margin: 10px 0;
 }
 
-.container{
+#app2 .container{
     width: 500px;
     margin: 0 auto;
 }
 
-.select-input .diff{
+#app2 .select-input .diff{
     flex-basis: 50%;
 }
 
-h1{
+#app2 h1{
     color: #ef476f;
     margin: 20px;
     text-align: center;
 }
 
-h3{
+#app2 h3{
     margin: 10px;
 }
 
-.box{
+#app2 .box{
+    /* display: flex;
+    justify-content: center; */
     margin: 10px 0;
     padding: 10px;
     border: 1px solid black;
@@ -47,26 +49,55 @@ h3{
     background-color: #1b9aaa;
 }
 
-button{
+#app2 .from-date{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#app2 button{
     padding: 5px 10px;
     border-radius: 3px;
     background-color: #ef476f;
     border: 1px solid #ffc43d;
 }
 
-input{
+#app2 input{
     padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid #ffc43d;
-
 }
 
-p{
+#app2 p{
     line-height: 2rem;
+    display: flex;
+    align-items: center;
 }
 
-span{
-    padding: 5px 10px;
+#app2 h4{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#app2 .show-val{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+#app2 .show-val-num{
+    width: 35px;
+}
+
+#app2 .show-val-date{
+    min-width: 100px;
+}
+
+#app2 span{
+    /* width: 35px;
+    height: 35px; */
+    /* padding: 2px 10px; */
     /* width: 50px; */
     margin: 0 5px;
     background-color: #ffc43d;
@@ -75,23 +106,39 @@ span{
 
 }
 
+#app2 .ga,#app2 .delivery{
+    /* display: flex;
+    justify-content: center; */
+    margin: 5px 0;
+}
+
 @media screen and (max-width: 600px){
-    .container{
+    #app2 .container{
         width: 90%;
     }
-    .select-input .diff{
+    #app2 .select-input .diff{
         flex-basis: 100%;
+        display: flex;
+        justify-content: center;
     }
+    #app2 .box input{
+    }
+    
+    #app2 .box input,#app2 .select-input .diff input{
+        width: 200px;
+        padding: 6px 20px;
+    }
+
     
 }
 
-.input-date{
+#app2 .input-date{
     display: flex;
     width: 100%;
     position: relative;
     margin-bottom: 20px;
 }
-.input-date div{
+#app2 .input-date div{
     flex-grow: 1;
     width: 50%;
     display: flex;
@@ -100,7 +147,7 @@ span{
     text-align: center;
     color: rgba(0, 0, 0, .6);
 }
-.input-date .line{
+#app2 .input-date .line{
     position: absolute;
     bottom: -10px;
     height: 3px;
@@ -109,15 +156,15 @@ span{
     transition: all .3s;
 }
 
-.input-date .active{
+#app2 .input-date .active{
     color: black;
     /* color: #ffc43d; */
 }
 
-.input-date .line.UM{
+#app2 .input-date .line.UM{
     left: 8px;
 }
 
-.input-date .line.D{
+#app2 .input-date .line.D{
     left: 53%;
 }
