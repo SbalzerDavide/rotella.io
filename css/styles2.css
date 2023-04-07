@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: #ffc43d;
+}
+
+.select-input{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.select-input p{
+    width: 80%;
+    margin: 10px 0;
+}
+
+.container{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.select-input .diff{
+    flex-basis: 50%;
+}
+
+h1{
+    color: #ef476f;
+    margin: 20px;
+    text-align: center;
+}
+
+h3{
+    margin: 10px;
+}
+
+.box{
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #1b9aaa;
+}
+
+button{
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: #ef476f;
+    border: 1px solid #ffc43d;
+}
+
+input{
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ffc43d;
+
+}
+
+p{
+    line-height: 2rem;
+}
+
+span{
+    padding: 5px 10px;
+    /* width: 50px; */
+    margin: 0 5px;
+    background-color: #ffc43d;
+    border-radius: 5px;
+    border: 1px solid #ef476f;
+
+}
+
+@media screen and (max-width: 600px){
+    .container{
+        width: 90%;
+    }
+    .select-input .diff{
+        flex-basis: 100%;
+    }
+    
+}
+
+.input-date{
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+.input-date div{
+    flex-grow: 1;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgba(0, 0, 0, .6);
+}
+.input-date .line{
+    position: absolute;
+    bottom: -10px;
+    height: 3px;
+    width: 45%;
+    background-color: #ffc43d;
+    transition: all .3s;
+}
+
+.input-date .active{
+    color: black;
+    /* color: #ffc43d; */
+}
+
+.input-date .line.UM{
+    left: 8px;
+}
+
+.input-date .line.D{
+    left: 53%;
+}

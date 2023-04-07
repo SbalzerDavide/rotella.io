@@ -2,8 +2,8 @@
 dayjs.extend(window.dayjs_plugin_relativeTime);
 
 
-const app = new Vue({
-    el: "#app",
+const appV2 = new Vue({
+    el: "#app2",
     data:{
         start: '',
         time: '',
@@ -24,6 +24,7 @@ const app = new Vue({
         addedDay: '',
         startFromEnd: '',
         inputParto: '',
+        active: 'UM',
     },
     created(){
         this.now = dayjs();
