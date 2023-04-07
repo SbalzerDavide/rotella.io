@@ -122,8 +122,11 @@
             <p>Gravidanza a 
               <span class="show-val show-val-num">{{ weekDiff }} </span> 
               settimane e 
-              <span class="show-val show-val-num">{{ dayDiff%7 }}</span>  
-              giorni</p>
+              <div class="d-flex align-items-center">
+                <span class="show-val show-val-num">{{ dayDiff%7 }}</span>  
+                giorni
+              </div>
+            </p>
           </div>
 
           <div class="delivery">
