@@ -146,11 +146,15 @@
 
         <div class="box">
           <h4>Calcolo giorno in cui sarò ad una certa epoca gestazionale</h4>
-          <p>Inserisci settimane</p>
-          <input v-model="inputWeek" type="number">
-          <p>Inserisci giorni</p>
-          <input v-model="inputDay" type="number">
-          <button @click="go3">calcola</button>
+          <div class="from-ga">
+            <div>
+              <p>settimane</p>
+              <input v-model="inputWeek" type="number">
+              <p>giorni</p>
+              <input v-model="inputDay" type="number">
+            </div>
+            <button @click="go3">calcola</button>
+          </div>
           <h3>{{ addedDay }}</h3>
         </div>
       </div>

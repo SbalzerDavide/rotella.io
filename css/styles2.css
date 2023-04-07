@@ -55,8 +55,27 @@ body{
     margin-bottom: 20px;
 }
 
+#app2 .from-ga{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+#app2 .from-ga button{
+    align-self: self-end;
+}
+#app2 .from-ga div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#app2 .from-ga div input{
+    margin: 0 10px;
+    width: 40px;
+}
+
 #app2 button{
-    padding: 5px 10px;
+    padding: 8px 20px;
     border-radius: 3px;
     background-color: #ef476f;
     border: 1px solid #ffc43d;
