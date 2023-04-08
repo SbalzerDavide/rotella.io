@@ -10,9 +10,9 @@ const appV2 = new Vue({
       dayDiff: '',
       dayDiff2: '',
       weekDiff: 0,
-      weekDiff2: '',
+      weekDiff2: 0,
       diffMore: '',
-      diffMore2: '',
+      // diffMore2: '',
       term: '',
       second: '',
       secondFormat: '',
@@ -51,12 +51,12 @@ const appV2 = new Vue({
         this.secondFormat = dayjs(this.second);
         this.dayDiff2 = this.secondFormat.diff(this.time, 'day');
         this.weekDiff2 = this.secondFormat.diff(this.time, 'week');
-        this.diffMore2 = this.dayDiff2 % 7;
+        // this.diffMore2 = this.dayDiff2 % 7;
         this.future = dayjs(this.time).add(280, 'day').format('DD/MM/YYYY');
       },
       go3(){
-        this.add = parseInt(this.inputDay) + (parseInt(this.inputWeek) * 7 );
-        this.addedDay = dayjs(this.time).add(this.add, 'day').format('DD/MM/YYYY');
+        let add =  parseInt(this.inputDay) + (parseInt(this.inputWeek) * 7 );
+        this.addedDay = dayjs(this.time).add(add, 'day').format('DD/MM/YYYY');
       },
     }
 })

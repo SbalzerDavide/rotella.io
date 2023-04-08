@@ -119,14 +119,14 @@
 
           <!-- where are you now -->
           <div class="ga">
-            <p>Gravidanza a 
+            <div class="d-flex align-items-center">
               <span class="show-val show-val-num">{{ weekDiff }} </span> 
-              settimane e 
-              <div class="d-flex align-items-center">
-                <span class="show-val show-val-num">{{ dayDiff%7 }}</span>  
-                giorni
-              </div>
-            </p>
+                settimane +
+            </div>
+            <div class="d-flex align-items-center">
+              <span class="show-val show-val-num">{{ dayDiff%7 }}</span>  
+              giorni
+            </div>
           </div>
 
           <div class="delivery">
@@ -141,7 +141,7 @@
             <input @change="go2" v-model="second" type="date">
           </div>
           <!-- <button @click="go2">calcola</button> -->
-          <p><span class="show-val show-val-num">{{ weekDiff2 }}</span> settimane e <span class="show-val show-val-num">{{ diffMore2 }}</span>  giorni</p>
+          <p><span class="show-val show-val-num">{{ weekDiff2 }}</span> settimane + <span class="show-val show-val-num">{{ dayDiff2 % 7 }}</span>  giorni</p>
         </div>
 
         <div class="box">
@@ -149,13 +149,17 @@
           <div class="from-ga">
             <div>
               <p>settimane</p>
-              <input v-model="inputWeek" type="number">
+              <input @change="go3" v-model="inputWeek" type="number">
               <p>giorni</p>
-              <input v-model="inputDay" type="number">
+              <input @change="go3" v-model="inputDay" type="number">
             </div>
-            <button @click="go3">calcola</button>
+            <!-- <button @click="go3">calcola</button> -->
           </div>
-          <h3>{{ addedDay }}</h3>
+          <div class="delivery">
+            <p>Delivery: <span class="show-val show-val-date">{{ addedDay }}</span></p>
+          </div>
+
+          <!-- <h3>{{ addedDay }}</h3> -->
         </div>
       </div>
 
@@ -163,7 +167,10 @@
   </div>
 
   <style>
-    #app1, #app2{
+    .new-version{
+      display: none;
+    }
+    /* #app1, #app2{
       margin-top: 40px;
     }
     .new-version{
@@ -173,7 +180,7 @@
       left: 5px;
       display: flex;
       justify-content: center;    
-    }
+    } */
   </style>
   <script>
     window.rotellaVersion = 2;
