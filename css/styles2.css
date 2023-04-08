@@ -162,6 +162,7 @@ body{
     #app2 .box input[type='date'],#app2 .select-input .diff input[type='date']{
         width: 200px;
         padding: 6px 20px;
+        font-size: 16px;
     }
 
     
