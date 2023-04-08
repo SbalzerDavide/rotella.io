@@ -94,6 +94,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 
 #app2 h4{
@@ -142,9 +143,14 @@ body{
 }
 
 #app2 .ga,#app2 .delivery{
-    /* display: flex;
-    justify-content: center; */
+    display: flex;
+    justify-content: center;
     margin: 5px 0;
+}
+
+#app2 .show-date{
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (max-width: 600px){
