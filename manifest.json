@@ -1,0 +1,14 @@
+{
+    "short_name": "Rotella Ostetrica",
+    "name": "Rotella Ostetrica",
+    "description": "Calcola le date e i periodi della gestazione",
+    "start_url": "index.html",
+    "icons": [{
+      "src": "images/rotellaIcon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }],
+    "background_color": "#ffc43d",
+    "theme_color": "#ffc43d",
+    "display": "standalone"
+  }
