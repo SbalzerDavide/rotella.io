@@ -27,6 +27,7 @@ const appV2 = new Vue({
     },
     created(){
       this.now = dayjs();
+      this.createPalette()
     },
     methods:{
       refresh(){
@@ -58,5 +59,38 @@ const appV2 = new Vue({
         let add =  parseInt(this.inputDay) + (parseInt(this.inputWeek) * 7 );
         this.addedDay = dayjs(this.time).add(add, 'day').format('DD/MM/YYYY');
       },
+      createPalette(){
+        json_data = {
+          "mode":"transformer", // transformer, diffusion or random
+          "num_colors":4, // max 12, min 2
+          "temperature":"1.2", // max 2.4, min 0
+          "num_results":50, // max 50 for transformer, 5 for diffusion
+          "adjacency":[ "0", "65", "45", "35", "65", "0", "35", "65", "45","35", "0", "35", "35", "65", "35", "0"], // nxn adjacency matrix as aflat array of strings
+          "palette":["-", "-", "-", "-"], // locked colors as hex codes, or '-' if blank
+        }
+
+        fetch('https://api.huemint.com/color', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(json_data)
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+          if(data.results[0]){
+            document.body.style.setProperty('--color0', data.results[0]?.palette[0]);
+            document.body.style.setProperty('--color1', data.results[0]?.palette[1]);
+            document.body.style.setProperty('--color2', data.results[0]?.palette[2]);
+            document.body.style.setProperty('--color3', data.results[0]?.palette[3]);
+          }
+        })
+        .catch(error => console.error(error));
+      }
     }
 })
+
+
+// {type: "post",url: "https://api.huemint.com/color",data: JSON.stringify(json_data),contentType: "application/json; charset=utf-8",dataType: "json"});
+// examplevar 
