@@ -27,7 +27,7 @@ const appV2 = new Vue({
     },
     created(){
       this.now = dayjs();
-      this.createPalette()
+      // this.createPalette()
     },
     methods:{
       refresh(){
